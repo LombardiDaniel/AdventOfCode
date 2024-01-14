@@ -21,3 +21,27 @@ func CountSantaFloors(s string) int {
 
 	return up - down
 }
+
+func NavigateSantaFloors(s string) int {
+
+	var floor int = 0
+
+	// fmt.Println(s)
+
+	for i, ch := range s {
+		if ch == '(' {
+			floor++
+		} else if ch == ')' {
+			floor--
+		}
+
+		// fmt.Println(string(ch))
+		// fmt.Println(floor)
+
+		if floor == -1 {
+			return i + 1
+		}
+	}
+
+	return -1
+}

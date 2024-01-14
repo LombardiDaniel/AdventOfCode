@@ -9,9 +9,7 @@ import (
 
 
 func main() {
-	fmt.Print("Hello, World!\n")
-
-	inputBytes, err := os.ReadFile("./test.txt")
+	inputBytes, err := os.ReadFile("./part1.txt")
 
 	if err != nil {
         log.Fatalf("unable to read file: %v", err)
@@ -19,5 +17,16 @@ func main() {
 
 	res := solver.CountSantaFloors(string(inputBytes[:]))
 
-	fmt.Println(res)
+	fmt.Printf("Part One: %d\n", res)
+
+	inputBytes, err = os.ReadFile("./part2.txt")
+
+	if err != nil {
+        log.Fatalf("unable to read file: %v", err)
+    }
+
+	res = solver.NavigateSantaFloors(string(inputBytes[:]))
+
+	fmt.Printf("Part Two: %d\n", res)
+
 }
