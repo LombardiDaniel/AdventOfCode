@@ -8,10 +8,10 @@ import (
 func TestCountCharInStrReturnZero(t *testing.T) {
 	var testStr string
 	var testChar rune
-	
+
 	testStr = "aaaaa"
 	testChar = 'b'
-	
+
 	var res int
 	res = solver.CountCharInStr(testChar, testStr)
 
@@ -38,9 +38,42 @@ func TestCountCharInStrReturnZero(t *testing.T) {
 	}
 }
 
+func TestCountCharInStrReturnValus(t *testing.T) {
+	var testStr string
+	var testChar rune
+
+	testStr = "aaaaa"
+	testChar = 'a'
+
+	var res int
+	res = solver.CountCharInStr(testChar, testStr)
+
+	if res != 5 {
+		t.Errorf("Test failed res='%d' for: testStr='%s', testChar='%c", res, testStr, testChar)
+	}
+
+	testStr = "abcdefg"
+	testChar = 'a'
+
+	res = solver.CountCharInStr(testChar, testStr)
+
+	if res != 2 {
+		t.Errorf("Test failed res='%d' for: testStr='%s', testChar='%c", res, testStr, testChar)
+	}
+
+	testStr = "abcdabcd"
+	testChar = 'a'
+
+	res = solver.CountCharInStr(testChar, testStr)
+
+	if res != 2 {
+		t.Errorf("Test failed res='%d' for: testStr='%s', testChar='%c", res, testStr, testChar)
+	}
+}
+
 
 func TestCountSantaFloors(t *testing.T) {
-	
+
 	var res int
 	var testStr string
 
